@@ -20,6 +20,13 @@ class TasksController extends Controller
         return view('tasks.show', compact('task'));
 
     }
+
+    public function table()
+    {
+        $tasks = Task::all();
+
+        return view('tasks.table', compact('tasks'));
+    }
 }
 
 

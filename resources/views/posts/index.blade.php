@@ -2,65 +2,45 @@
 
 @section ('content')
 
-    <main role="main">
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">IS 421</h1>
-                <p class="lead text-muted">Lorem ipsum dolor sit amet, ne feugait pertinax similique duo. Ut aeterno indoctum per. In sed novum constituto, an commodo scripserit adversarium nec, sed eu dicant oblique. Dolor similique et vel. Molestie mandamus sit ad, an nulla postea singulis eum.</p>
-                <p>
-                    <a href="#" class="btn btn-primary">Main call to action</a>
-                    <a href="#" class="btn btn-secondary">Secondary action</a>
-                </p>
-            </div>
-        </section>
+    <main role="main" class="container">
 
-        <div class="album text-muted">
-            <div class="container">
+        <div class="row">
 
-                <div class="row">
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
+            <div class="col-sm-8 blog-main">
 
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
+                @foreach ($posts as $post)
+                    @include ('posts.post')
+                @endforeach
 
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card">
-                        <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
+
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">New feature</h2>
+                    <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
                 </div>
 
+                <nav class="blog-pagination">
+                    <a class="btn btn-outline-primary" href="#">Older</a>
+                    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+                </nav>
+
             </div>
+
+
+
         </div>
+    </main>
+
 
 @endsection
 
