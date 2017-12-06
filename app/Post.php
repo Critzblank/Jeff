@@ -7,4 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $guarded = [];
+
+    public function comments(){
+
+        return $this->hasMany(Comment::class);
+    }
+
+    public function user(){
+
+        return $this->hasMany(User::Class);
+
+    }
+
+    public function addComment($body, $userID){
+
+        $this->comments()->create(compact('body','userID'));
+
+    }
+
 }

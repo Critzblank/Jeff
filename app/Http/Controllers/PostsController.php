@@ -15,6 +15,9 @@ class PostsController extends Controller
         return view('posts.index', compact('posts'));
     }
 
+    public function calendar(){
+        return view('posts.calendar');
+    }
 
     public function show(Post $post)
     {
@@ -39,7 +42,8 @@ class PostsController extends Controller
 
         Post::create([
             'title' => request('title'),
-            'body' => request('body')
+            'body' => request('body'),
+            'userID' => auth()->id()
         ]);
 
         return redirect('/');

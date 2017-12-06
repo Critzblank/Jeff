@@ -15,6 +15,9 @@ Route::post('/posts', 'PostsController@store');
 
 Route::get('/posts/{post}', 'PostsController@show');
 
+Route::post('/posts/{post}/comments', 'CommentsController@store');
+
+Route::get('/calendar', 'PostsController@calendar');
 
 
 
@@ -23,3 +26,7 @@ Route::get('/posts/{post}', 'PostsController@show');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
