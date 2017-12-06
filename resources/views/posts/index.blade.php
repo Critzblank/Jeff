@@ -33,9 +33,15 @@
 
                             </tbody>
                         </table>
-                        <a href="posts/create" class="btn btn-info" role="button">Create a new Task</a>
+
                     </div>
                 @endif
+
+                @guest
+                        Welcome to your new Task Manager
+                @else
+                        <a href="posts/create" class="btn btn-info" role="button">Create a new Task</a>
+                    @endguest
 
             </div>
         </div>
