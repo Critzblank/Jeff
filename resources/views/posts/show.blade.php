@@ -59,4 +59,6 @@
 
     </div>
 
+    <a href="{{$post->id}}/edit">Click here</a>
+
 @endsection

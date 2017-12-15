@@ -14,6 +14,8 @@
 
     <!-- Custom styles for this template -->
     <link href="/Jeff/public/css/blog.css" rel="stylesheet">
+
+    <script src="/Jeff/public/js/whatever.js"></script>
 </head>
 
 <body>

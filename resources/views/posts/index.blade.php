@@ -10,12 +10,13 @@
 
                 @if(count($posts))
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped sortable">
                             <thead>
                             <tr>
                                 <th>Task Name</th>
                                 <th>Task Body</th>
                                 <th>Date</th>
+                                <th>Completed</th>
                             </tr>
                             </thead>
 
@@ -24,9 +25,17 @@
                             @foreach($posts as $post)
 
                                 <tr>
-                                    <td><a href='posts/{{ $post->id }}'>{{ $post->title }}</a></td>
+                                    <td><a href='posts/{{ $post->id }}/edit'>{{ $post->title }}</a></td>
                                     <td>{{ $post->body }}</td>
                                     <td>{{ $post->created_at->toFormattedDateString() }}</td>
+                                    <td>
+                                        @if ($post->completed == true)
+                                            <button type="button" class="btn btn-success">  Completed<i class="fa fa-check" aria-hidden="true"></i></button>
+                                        @else
+                                            <button type="button" class="btn btn-danger">  Incomplete<i class="fa fa-frown-o" aria-hidden="true"></i></button>
+                                        @endif
+                                    </td>
+
                                 </tr>
 
                             @endforeach
@@ -40,7 +49,7 @@
                 @guest
                         Welcome to your new Task Manager
                 @else
-                        <a href="posts/create" class="btn btn-info" role="button">Create a new Task</a>
+                        <a href="posts/create" class="btn btn-primary" role="button">Create a new Task</a>
                     @endguest
 
             </div>
